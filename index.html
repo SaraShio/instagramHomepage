@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale-1">
+
+    <style>
+        :root {
+            --istagram-blue: rgb(106, 181, 246);
+            --facebook-blue: rgb(49, 72, 121);
+            --signup-blue: rgb(8, 153, 249);
+            --white: rgb(255, 255, 255);
+            --off-white: rgb(255, 254, 254);
+            --black: rgb(0, 0, 0);
+            --background-white: rgb(247, 246, 246);
+            --light-gray: rgb(245, 242, 242);
+            --medium-gray: rgb(219, 217, 217);
+            --dark-gray: rgb(126, 125, 125);
+            --default-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-white);
+            font-family: var(--default-font);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 186px);
+            grid-template:
+                "a b"
+                "c c"
+            ;
+            gap: 5px;
+            justify-items: center;
+            align-items: center;
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 320px;
+            max-width: 350px;
+            margin: 40px 0;
+
+        }
+
+        .childa {
+            grid-area: a;
+        }
+
+        .childb {
+            grid-area: b;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .login-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            border: 1px solid var(--medium-gray);
+            background-color: var(--off-white);
+        }
+
+
+        .instagram-logo {
+            width: 160px;
+        }
+
+
+        .details {
+            height: 35px;
+            width: 100%;
+            border-radius: 2px;
+            background-color: var(--light-gray);
+            border: 0.5px solid var(--medium-gray);
+            font-family: var(--default-font);
+            margin: 10px;
+            padding-left: 8px;
+            font-size: 11px;
+        }
+
+        .childb>button {
+            background-color: var(--istagram-blue);
+            border: none;
+            color: var(--white);
+            height: 30px;
+            border-radius: 10px;
+            width: 100%;
+            font-weight: bold;
+            font-size: 13px;
+
+        }
+
+        .or {
+            margin: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 8px;
+            font-weight: bold;
+            color: var(--dark-gray);
+            font-size: 12px;
+        }
+
+
+        .or>div {
+            border-bottom: 1px solid var(--medium-gray);
+            width: 85px;
+            height: 20px;
+        }
+
+
+        .fb-icon {
+            width: 15px;
+        }
+
+        .facebook-link>a {
+            color: var(--facebook-blue);
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .forgot-password {
+            color: var(--facebook-blue);
+            font-size: 10px;
+            padding-top: 16px;
+
+        }
+
+        .signup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid var(--medium-gray);
+            font-size: 12px;
+            background-color: var(--off-white);
+        }
+
+        .signup>a {
+            color: var(--signup-blue);
+            font-weight: bold;
+            padding: 5px;
+        }
+
+        .app-download>div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        .app-icons>a {
+            padding: 8px;
+        }
+
+
+        .childc {
+            grid-area: c;
+            font-size: 12px;
+        }
+
+        .links>a {
+            color: var(--dark-gray);
+            padding: 2px;
+        }
+
+        .legal {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+        }
+
+        button {
+            background-color: var(--background-white);
+            border: none;
+            color: var(--dark-gray);
+            font-size: 12px;
+
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: var(--white);
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: var(--black);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--light-gray);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        /* Iphone XR - 414x896 */
+        @media screen and (max-width: 414px) {
+
+            .form {
+                margin-top: 0;
+            }
+
+            .login-details {
+                border: none;
+                background-color: var(--background-white);
+            }
+
+            .signup {
+                border: none;
+                background-color: var(--background-white);
+
+            }
+        }
+
+        /* Ipad Air - 820x1180 */
+        @media screen and (max-width: 820px) {
+            .container {
+                grid-template:
+                    "b"
+                    "c"
+                ;
+            }
+
+            .childa {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="https://media.voguebusiness.com/photos/60ae33319e6b5e325e60067c/2:3/w_1920,c_limit/instagram-likes-voguebus-instagram-may-21-story.gif"
+            class="childa " alt="" width="420">
+
+        <div class="form">
+            <div class="childb login-details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1600px-Instagram_logo.svg.png?20160616034027"
+                    alt="" class="instagram-logo">
+
+                <input class="details" placeholder="Phone number, username, or email" />
+                <input class="details" placeholder="Password" />
+
+                <button class="login-button">Log in</button>
+
+                <div class="or">
+                    <div></div>
+                    <p>OR</p>
+                    <div></div>
+                </div>
+
+                <div class="facebook-link">
+                    <a href="https://www.facebook.com">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="instagram.com" width="10"
+                            height="">
+                    </a>
+                    <a href="https://www.facebook.com">Log in with Facebook</a>
+
+                </div>
+
+                <a href="https://www.instagram.com/accounts/password/reset/" class="forgot-password">Forgot
+                    password?</a>
+            </div>
+
+            <div class="signup">
+                <p>Don't have an account?</p>
+                <a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a>
+            </div>
+
+            <div class="app-download">
+
+                <div>Get the app.</div>
+
+                <div class="app-icons">
+                    <a href="https://apps.apple.com/app/instagram/id389801252?vt=lo">
+                        <img src="https://static.cdninstagram.com/rsrc.php/v3/yt/r/Yfc020c87j0.png" alt="instagram.com"
+                            width="100">
+                    </a>
+
+                    <a
+                        href="https://play.google.com/store/apps/details?id=com.instagram.android&referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26ig_mid%3D364F0C62-7245-4282-8E93-4898D7DCCC7E%26utm_content%3Dlo%26utm_medium%3Dbadge&pli=1">
+                        <img src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" alt="" width="100">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="childc">
+            <div class="links">
+                <a href="https://about.meta.com/">Meta</a>
+                <a href="https://about.instagram.com/">About</a>
+                <a href="https://about.instagram.com/blog">Blog</a>
+                <a href="https://about.instagram.com/about-us/careers">Jobs</a>
+                <a href="https://help.instagram.com/">Help</a>
+                <a href="https://developers.facebook.com/docs/instagram">API</a>
+                <a
+                    href="https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect">Privacy</a>
+                <a href="https://help.instagram.com/581066165581870/">Terms</a>
+                <a href="https://www.instagram.com/directory/profiles/">Top Accounts</a>
+                <a href="https://www.instagram.com/explore/locations/">Locations</a>
+                <a href="https://www.instagram.com/web/lite/">Instagram Lite</a>
+                <a href="https://www.facebook.com/help/instagram/261704639352628">Contact Uploading & Non-Users</a>
+            </div>
+
+            <div class="legal">
+                <div class="dropdown">
+                    <button>English</button>
+                    <div class="dropdown-content">
+                        <a href="#">Deutsch</a>
+                        <a href="#">Japanese</a>
+                        <a href="#">Italian</a>
+                        <a href="#">Afrikaans</a>
+                        <a href="#">中文 & 台灣</a>
+                        <a href="#">Český</a>
+                        <a href="#">Dansk</a>
+                        <a href="#">Nederlands</a>
+                        <a href="#">Suomi</a>
+                        <a href="#">Français</a>
+                        <a href="#">Ελληνικά</a>
+                        <a href="#">Bahasa Indonesia</a>
+                        <a href="#">Italiano</a>
+                        <a href="#">日本語</a>
+                        <a href="#">한국어</a>
+                        <a href="#">Norsk</a>
+                        <a href="#">Bahasa Melayu</a>
+                        <a href="#">Polski</a>
+                        <a href="#">Português</a>
+                        <a href="#">Русский</a>
+                        <a href="#">Svenska</a>
+                        <a href="#">Español</a>
+                        <a href="#">Filipino</a>
+                        <a href="#">ภาษาไทย</a>
+                        <a href="#">Türkçe</a>
+                    </div>
+                </div>
+
+                <p> &#169; 2023 Instagram from Meta</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+    </script>
+</body>
+
+</html>
